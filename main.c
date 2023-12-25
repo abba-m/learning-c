@@ -38,10 +38,18 @@ struct Student createStudent (int id, char firstName[], char lastName[], float g
 int main () {
   char name[21];
   int choice;
+  // print welcome screen and get user name
   welcome_scrn(name);
 
   printf(MAIN_MENU_TEXT, name);
   scanf("%d", &choice);
+
+  // get main menu choice
+  while (choice < 1 || choice > 4) {
+    printf("Invalid choice, please try again.\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+  }
 
   switch (choice) {
     case 1:
